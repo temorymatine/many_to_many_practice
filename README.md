@@ -12,6 +12,8 @@ Task:  Build out the methods and relationships for a `Tourist` model, a `Landmar
 - A `Landmark` can be visited by many `Tourist`s
 - A `Trip` belongs to a `Tourist`
 - A `Trip` belongs to a `Landmark`
+- A `Tourist` can take many `Trip`s
+- A `Landmark` can have many `Trip`s
 
 #### Build the following methods on the `Tourist` class
 
