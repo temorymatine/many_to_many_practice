@@ -1,3 +1,3 @@
 require 'bundler/setup'
 Bundler.require
-require_rel '../app/models'
+require_rel '../app'
