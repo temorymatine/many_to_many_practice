@@ -1,31 +1,27 @@
 class Landmark
-@@all = []
+  @@all = []
 
-attr_accessor :name, :city
+  attr_accessor :name, :city
 
-def initialize(name,city)
-    
+  def initialize(name,city)
     @name = name
     @city = city
     @@all << self
-end
+  end
 
-def self.all
-
+  def self.all
     @@all 
+  end
 
-end
+  def self.find_by_city(city)
+    self.all.select {|landmark| landmark.city == city}
+  end
 
-def self.find_by_city(city)
-    
-end
+  def trips
+    Trip.all.select {|trip| trip.landmark == self}
+  end
 
-def trips
-
-end
-
-def tourists
-
-end
-
+  def tourists
+    self.trips.collect {|trip| trip.tourist}
+  end
 end

@@ -1,28 +1,17 @@
 class Trip
-@@all = []
+  @@all = []
 
-attr_accessor :landmark, :tourist
+  attr_reader :landmark, :tourist
 
-def initialize(landmark, tourist)
+  def initialize(landmark, tourist)
 
     @landmark = landmark
     @tourist = tourist
     @@all << self
 
-end
+  end
 
-def self.all
+  def self.all
     @@all
-end
-
-
-def tourists
-
-end
-
-def landmark
-
-end
-
-
+  end
 end

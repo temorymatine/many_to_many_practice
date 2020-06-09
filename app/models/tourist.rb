@@ -1,34 +1,35 @@
 class Tourist
-@@all = []
+  @@all = []
 
-attr_accessor :name
+  attr_accessor :name
 
-def initialize(name)
+  def initialize(name)
 
     @name = name
     @@all << self
-end
+  end
 
-def self.all
-
+  def self.all
     @@all 
+  end
 
-end
+  def self.find_by_name(name)
+    self.all.find {|tourist| tourist.name == name}
+  end
 
-def self.find_by_name(name)
+  def trips
+    Trip.all.select {|trip| trip.tourist == self}
+  end
 
-end
+  def landmarks
+    self.trips.collect {|trip| trip.landmark}
+  end
 
-def trips
-end
+  def visit_landmark(landmark)
+    Trip.new(landmark, self)
+  end
 
-def landmarks
-end
-
-def visit_landmark(landmark)
-end
-
-def never_visited
-end
-
+  def never_visited
+    Landmark.all.difference(self.landmarks)
+  end
 end
