@@ -28,6 +28,7 @@ Task:  Build out the methods and relationships for a `Tourist` model, a `Landmar
 - `Tourist#landmarks`
   - returns an **array** of all the landmarks for the given `Tourist`
 - `Tourist#visit_landmark(landmark)` should create a new trip for that tourist to the given landmark
+- `Tourist#never_visited` should return an array of all the landmarks this tourist has never traveled to
 
 #### Build out the following methods on the `Landmark` class
 
